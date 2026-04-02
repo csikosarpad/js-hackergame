@@ -1,0 +1,139 @@
+{
+    "app": {
+        "consoleLine1": "🛡️ JS HACKERGAME - Biztonsági Kihívás",
+        "consoleLine2": "Nyisd meg a DevTools-t (F12) és használd az Inspectort a hitelesítő adatok megtalálásához!",
+        "consoleLine3": "Kezdetben könnyű, majd egyre nehezebb lesz...",
+        "completedAll": "🎉 Gratulálunk! Minden 20 szintet megfejtettél!"
+    },
+    "selector": {
+        "title": "🛡️ HACKERGAME",
+        "subtitle": "Progresszív Biztonsági Kihívás - Találd meg a felhasználónevet és jelszót",
+        "tipsTitle": "Tippek:",
+        "tip1": "Használd a böngésző DevTools-t (F12)",
+        "tip2": "Nyomj F12 → Inspector fül az HTML vizsgálatához",
+        "tip3": "Használd a Console fület JavaScript parancsok futtatásához",
+        "levelsCompleted": "{{count}} / {{total}} szint teljesítve ({{percent}}%)"
+    },
+    "challenge": {
+        "levelNotFound": "A szint nem található",
+        "difficulty": "Nehézség",
+        "showHint": "💡 Tipp megjelenítése",
+        "enterCredentials": "🔐 Add meg a hitelesítő adatokat",
+        "username": "Felhasználónév",
+        "password": "Jelszó",
+        "submit": "Beküldés",
+        "back": "Vissza",
+        "incorrect": "❌ Hibás hitelesítő adatok. Próbáld újra!",
+        "levelComplete": "✅ Szint teljesítve! Tovább a következőhöz...",
+        "devtoolsHelp": "💻 Használd a DevTools-t (F12) az oldal vizsgálatához és a hitelesítő adatok megtalálásához",
+        "devtoolsAreas": "Inspector • Console • Network • Application"
+    },
+    "levels": {
+        "1": {
+            "title": "1. szint: Rejtett a szemed előtt",
+            "description": "A belépési adatok a szem előtt vannak elrejtve. Ellenőrizd az Inspectort!",
+            "hint": "Nézd meg a HTML forrást. A válasz fekete szöveg fekete háttéren."
+        },
+        "2": {
+            "title": "2. szint: CSS rejtett",
+            "description": "Használd a DevTools Inspectort a rejtett stílusok feltárásához.",
+            "hint": "A jelszó el van rejtve CSS display: none vagy opacity: 0 beállítással."
+        },
+        "3": {
+            "title": "3. szint: DOM manipuláció",
+            "description": "A JavaScript konzolban rejtették el a hitelesítő adatokat.",
+            "hint": "Ellenőrizd a Console fület - keresd a logolt üzeneteket vagy változókat."
+        },
+        "4": {
+            "title": "4. szint: HTML attribútumok",
+            "description": "Az adatok HTML attribútumokba vannak elmentve. Inspecteld az elemet!",
+            "hint": "Keresd a data-* attribútumokat vagy rejtett input mezőket."
+        },
+        "5": {
+            "title": "5. szint: Base64 kódolás",
+            "description": "A hitelesítő adatok kódoltak. Használd a konzolt a dekódoláshoz.",
+            "hint": "Próbáld ki az atob() függvényt a konzolban: atob(\"encoded_string\")"
+        },
+        "6": {
+            "title": "6. szint: CSS injekció",
+            "description": "Találd meg a jelszót a CSS fájlban.",
+            "hint": "Ellenőrizd a Network fület CSS fájlokért, vagy keress furcsa inline stílusokat."
+        },
+        "7": {
+            "title": "7. szint: Minified JavaScript",
+            "description": "A deobfuszkált JavaScript tartalmazza a jelszót.",
+            "hint": "Nézd meg a Console-t vagy szépen formázd a JavaScriptet. Keresd a string összeillesztést."
+        },
+        "8": {
+            "title": "8. szint: LocalStorage nyomozás",
+            "description": "Ellenőrizd az Application/Storage fület LocalStorage titkokért.",
+            "hint": "Jobb klikk → Inspect → Application → LocalStorage. Keresd a mentett értékeket."
+        },
+        "9": {
+            "title": "9. szint: Hálózati kérés",
+            "description": "A hitelesítő adatok háttérben XHR-lekéréssel jönnek.",
+            "hint": "Ellenőrizd a Network fület oldalbetöltéskor. Keresd az API hívásokat vagy adat végpontokat."
+        },
+        "10": {
+            "title": "10. szint: Cookie kivonás",
+            "description": "Keresd a hitelesítő adatokat cookie-kban vagy sessionStorage-ban.",
+            "hint": "Console → document.cookie vagy Application fül → Cookies."
+        },
+        "11": {
+            "title": "11. szint: Regex mintázatillesztés",
+            "description": "A hitelesítő adatok regex mintázatokban rejtőznek. Dekódold őket!",
+            "hint": "Nyisd meg a Console-t és keresd a regex mintázatokat. Próbáld ki a kiértékelést vagy a globális változókat."
+        },
+        "12": {
+            "title": "12. szint: Láncolt Base64",
+            "description": "Több rétegű Base64 kódolás. Dekódold rekurzívan!",
+            "hint": "Használd többször az atob()-t. Próbáld: atob(atob(atob(encoded_var)))"
+        },
+        "13": {
+            "title": "13. szint: CSS egyéni tulajdonságok",
+            "description": "A hitelesítő adatok CSS változókban vannak tárolva.",
+            "hint": "Inspecteld a stílusokat. Keresd a --username és --password CSS változókat. Kapsz értéket getComputedStyle()-lal."
+        },
+        "14": {
+            "title": "14. szint: IndexedDB tárolás",
+            "description": "A hitelesítő adatok IndexedDB-ben vannak tárolva. Ellenőrizd az Application fület!",
+            "hint": "DevTools → Application → IndexedDB. Nyisd meg a 'credentials' adatbázist és keresd az értékeket."
+        },
+        "15": {
+            "title": "15. szint: WebWorker üzenetek",
+            "description": "A hitelesítő adatok Web Worker-en keresztül érkeznek. Fogd el az üzenetet!",
+            "hint": "Nézd meg a Console-t worker üzenetekért. A hitelesítő adatok egy Worker-nek vannak átadva és visszalogolva."
+        },
+        "16": {
+            "title": "16. szint: Hexadecimális kódolás",
+            "description": "A hitelesítő adatok hexadecimálisan vannak kódolva. Dekódold őket!",
+            "hint": "Alakítsd át a hex stringeket ASCII-vá. Próbáld: String.fromCharCode(...)."
+        },
+        "17": {
+            "title": "17. szint: Bináris adat",
+            "description": "A hitelesítő adatok ArrayBuffer-ben tárolódnak bináris formában.",
+            "hint": "Használd a Console-t az ArrayBuffer olvasásához. Próbáld: new Uint8Array(window.BINARY_DATA)."
+        },
+        "18": {
+            "title": "18. szint: Shadow DOM titkok",
+            "description": "A hitelesítő adatok a Shadow DOM-ban vannak elrejtve. Inspecteld a DOM fát!",
+            "hint": "Az Inspector megmutatja a Shadow DOM-ot. Keresd a #shadow-root elemet."
+        },
+        "19": {
+            "title": "19. szint: Vegyes titkosítás",
+            "description": "A hitelesítő adatok többrétegűen vannak kódolva: Hex + Base64 + ROT13.",
+            "hint": "Dekódold lépésről lépésre: Hex → Base64 → ROT13. Használj online eszközöket vagy JS függvényeket."
+        },
+        "20": {
+            "title": "20. szint: ULTIMATE CHALLENGE",
+            "description": "Minden technika kombinálva. Teljes obfuszkáció és több rétegű kódolás.",
+            "hint": "Használd az összes skillodat: Inspector, Console, Network, dekódolj több formátumot, nézd az összes tárolási módot."
+        }
+    },
+    "language": {
+        "label": "Nyelv",
+        "en": "English",
+        "hu": "Magyar",
+        "de": "Német"
+    }
+}
