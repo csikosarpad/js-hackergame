@@ -19,15 +19,18 @@ export default function ChallengePanel({ level, onSuccess, onBack }: ChallengePr
 
     // Execute scripts in the challenge content after it renders
     useEffect(() => {
-        if (challengeContentRef.current && level) {
-            // Use a small delay to ensure DOM is properly updated
-            const timer = setTimeout(() => {
-                if (challengeContentRef.current) {
-                    executeScriptsInElement(challengeContentRef.current);
-                }
-            }, 0);
-            return () => clearTimeout(timer);
+        if (!challengeContentRef.current || !level) {
+            return;
         }
+
+        // Use a small delay to ensure DOM is properly updated
+        const timer = setTimeout(() => {
+            if (challengeContentRef.current) {
+                executeScriptsInElement(challengeContentRef.current);
+            }
+        }, 0);
+
+        return () => clearTimeout(timer);
     }, [level, level?.id]);
 
     const handleSubmit = (e: React.FormEvent) => {

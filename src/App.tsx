@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+// @ts-ignore: side-effect import for CSS without type declarations
 import './App.css';
 import LevelSelector from './components/LevelSelector';
 import ChallengePanel from './components/ChallengePanel';

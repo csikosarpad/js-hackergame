@@ -42,7 +42,7 @@
         "3": {
             "title": "Level 3: DOM Manipulation",
             "description": "The JavaScript console has been used to hide the credentials.",
-            "hint": "Check the Console tab - look for logged messages or variables."
+            "hint": "Check the Console tab - look for logged messages or variables."            
         },
         "4": {
             "title": "Level 4: HTML Attributes",
