@@ -16,6 +16,7 @@
     "declaration": false, // Generate declaration files (.d.ts)
     "declarationMap": false, // Generate source maps for declaration files
     "sourceMap": false, // Generate source maps for debugging
+    "noEmit": true, // Don't emit JavaScript files
     "jsx": "react-jsx",
     "resolveJsonModule": true, // Allow importing JSON files
     "types": ["react", "react-dom"],
