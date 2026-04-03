@@ -1,12 +1,12 @@
 {
   "app": {
-    "consoleLine1": "🛡️ JS HACKERGAME - Sicherheitsherausforderung",
+    "consoleLine1": "🛡️ JS - FRONT-END HACKERGAME - Sicherheitsherausforderung",
     "consoleLine2": "Öffne DevTools (F12) und verwende den Inspector, um Anmeldedaten zu finden!",
     "consoleLine3": "Anfangs einfach, wird immer schwieriger...",
     "completedAll": "🎉 Glückwunsch! Du hast alle 20 Level geknackt!"
   },
   "selector": {
-    "title": "🛡️ HACKERGAME",
+    "title": "🛡️ JS - FRONT-END HACKERGAME",
     "subtitle": "Progressive Sicherheitsherausforderung - Benutzername & Passwort finden",
     "tipsTitle": "Tipps:",
     "tip1": "Nutze die DevTools deines Browsers (F12)",
@@ -18,6 +18,8 @@
     "levelNotFound": "Level wurde nicht gefunden",
     "difficulty": "Schwierigkeitsgrad",
     "showHint": "💡 Tipp anzeigen",
+    "showHint2": "💡 Zusätzlichen Tipp anzeigen",
+    "showInfo": "ℹ️ Informationen anzeigen",
     "enterCredentials": "🔐 Zugangsdaten eingeben",
     "username": "Benutzername",
     "password": "Passwort",
@@ -42,92 +44,113 @@
     "3": {
       "title": "Level 3: DOM-Manipulation",
       "description": "Die JavaScript-Konsole wurde verwendet, um die Zugangsdaten zu verbergen.",
-      "hint": "Überprüfe den Konsole-Tab - suche nach geloggten Nachrichten oder Variablen."
+      "hint": "Überprüfe den Konsole-Tab - suche nach geloggten Nachrichten oder Variablen.",
+      "hint2": "Gib in der Konsole ein: 'DEBUG_CREDENTIALS'",
+      "showInfo": "In diesem Level sind die Zugangsdaten in einer JavaScript-Variable versteckt und in der Konsole geloggt. Finde den Variablennamen und seinen Wert in der Konsole!"
     },
     "4": {
       "title": "Level 4: HTML-Attribute",
       "description": "Daten werden in HTML-Attributen gespeichert. Inspiziere die Elemente!",
-      "hint": "Suche data-* Attribute oder versteckte Input-Felder."
+      "hint": "Suche data-* Attribute oder versteckte Input-Felder.",
+      "showInfo": "In diesem Level sind die Zugangsdaten in HTML-Attributen versteckt, wie data-username und data-password. Verwende den Inspector, um diese Attribute zu finden und ihre Werte zu lesen!"
     },
     "5": {
       "title": "Level 5: Base64-Kodierung",
       "description": "Die Zugangsdaten sind kodiert. Nutze die Konsole zum Dekodieren.",
-      "hint": "Probiere die atob()-Funktion in der Konsole: atob(\"encoded_string\")"
+      "hint": "Probiere die atob()-Funktion in der Konsole: atob(\"encoded_string\")",
+      "showInfo": "Base64-Kodierung ist eine gängige Methode, um Zugangsdaten zu verbergen. Verwende die atob()-Funktion in der Konsole, um sie zu dekodieren."
     },
     "6": {
       "title": "Level 6: CSS-Injektion",
       "description": "Finde das Passwort in der CSS-Datei.",
-      "hint": "Überprüfe den Network-Tab auf CSS-Dateien oder suche nach ungewöhnlichem Inline-CSS."
+      "hint": "Überprüfe den Network-Tab auf CSS-Dateien oder suche nach ungewöhnlichem Inline-CSS.",
+      "showInfo": "In diesem Level ist das Passwort in einer CSS-Datei versteckt. Verwende den DevTools Network-Tab, um die CSS-Datei zu finden, dann suche darin nach dem Passwort!"
     },
     "7": {
       "title": "Level 7: Minified JavaScript",
       "description": "Deobfuskiertes JavaScript enthält das Passwort.",
-      "hint": "Überprüfe die Konsole oder formatiere das JavaScript. Suche nach String-Konkatentierung."
+      "hint": "Überprüfe die Konsole oder formatiere das JavaScript. Suche nach String-Konkatentierung.",
+      "hint2": "In diesem Level ist das Passwort in einer minified JavaScript-Datei versteckt. Verwende DevTools, um die Datei zu öffnen, dann die 'Pretty Print'-Funktion, um den Code lesbar zu machen. Suche nach dem Passwort unter den Variablen!",
+      "showInfo": "Minified JavaScript-Dateien sind schwer zu lesen, aber du kannst sie mit der DevTools 'Pretty Print'-Funktion schön formatieren. In diesem Level ist das Passwort in einer solchen Datei versteckt und durch String-Konkatentierung gegeben. Finde die Variablen, die konkateniert werden, und versuche, das Passwort zu rekonstruieren!"
     },
     "8": {
       "title": "Level 8: Local Storage Suche",
       "description": "Überprüfe den Application/Storage-Tab auf LocalStorage-Geheimnisse.",
-      "hint": "Rechtsklick → Inspect → Application → LocalStorage. Suche gespeicherte Werte."
+      "hint": "Rechtsklick → Inspect → Application → LocalStorage. Suche gespeicherte Werte.",
+      "showInfo": "LocalStorage ist ein gängiger Ort, um Zugangsdaten zu speichern. Verwende den DevTools Application-Tab, um den LocalStorage-Inhalt anzusehen und die Zugangsdaten zu finden!"
     },
     "9": {
       "title": "Level 9: Netzwerkrequest",
       "description": "Die Zugangsdaten werden im Hintergrund via XHR abgefragt.",
-      "hint": "Überprüfe den Network-Tab beim Laden der Seite. Suche API-Calls oder Endpunkte."
+      "hint": "Überprüfe den Network-Tab beim Laden der Seite. Suche API-Calls oder Endpunkte.",
+      "showInfo": "In diesem Level sind die Zugangsdaten in einer Netzwerkanfrage versteckt. Verwende den DevTools Network-Tab, um alle Netzwerkanfragen anzusehen und diejenige zu finden, die die Zugangsdaten enthält!"
     },
     "10": {
       "title": "Level 10: Cookie-Extraktion",
       "description": "Suche Zugangsdaten in Cookies oder sessionStorage.",
-      "hint": "Konsole → document.cookie oder Application → Cookies."
+      "hint": "Konsole → document.cookie oder Application → Cookies.",
+      "showInfo": "Cookies und sessionStorage sind gängige Orte, um Zugangsdaten zu speichern. Verwende die Konsole, um document.cookie anzusehen, oder den Application-Tab für Cookies, und finde die Zugangsdaten!"
     },
     "11": {
       "title": "Level 11: Regex Mustererkennung",
       "description": "Die Zugangsdaten sind in Regex-Mustern versteckt. Entschlüssle sie!",
-      "hint": "Öffne die Konsole und suche nach Regex-Mustern. Versuche, sie zu evaluieren oder globale Variablen zu prüfen."
+      "hint": "Öffne die Konsole und suche nach Regex-Mustern. Versuche, sie zu evaluieren oder globale Variablen zu prüfen.",
+      "showInfo": "In diesem Level sind die Zugangsdaten in einem Regex-Muster versteckt. Verwende die Konsole, um das Regex-Muster zu finden, dann versuche, die Zugangsdaten basierend auf dem Muster zu dekodieren!"
     },
     "12": {
       "title": "Level 12: Verkettetes Base64",
       "description": "Mehrere Base64-Schichten. Dekodiere rekursiv!",
-      "hint": "Verwende atob() mehrmals. Probiere: atob(atob(atob(encoded_var)))."
+      "hint": "Verwende atob() mehrmals. Probiere: atob(atob(atob(encoded_var))).",
+      "showInfo": "In diesem Level sind die Zugangsdaten mit mehreren Schichten von Base64-Kodierung versteckt. Verwende die atob()-Funktion mehrmals in der Konsole, um die Zugangsdaten rekursiv zu dekodieren!"
     },
     "13": {
       "title": "Level 13: CSS Custom Properties",
       "description": "Zugangsdaten sind in CSS-Variablen gespeichert.",
-      "hint": "Inspectiere die Stile. Suche --username und --password CSS-Variablen. Verwende getComputedStyle()."
+      "hint": "Inspectiere die Stile. Suche --username und --password CSS-Variablen. Verwende getComputedStyle().",
+      "showInfo": "In diesem Level sind die Zugangsdaten in CSS-Variablen (custom properties) versteckt. Verwende den Inspector, um diese Variablen zu finden, dann die getComputedStyle()-Funktion in der Konsole, um ihre Werte zu lesen!"
     },
     "14": {
       "title": "Level 14: IndexedDB Speicherung",
       "description": "Zugangsdaten in IndexedDB. Prüfe den Application-Tab!",
-      "hint": "DevTools → Application → IndexedDB. Öffne die 'credentials'-Datenbank und finde die Daten."
+      "hint": "DevTools → Application → IndexedDB. Öffne die 'credentials'-Datenbank und finde die Daten.",
+      "showInfo": "In diesem Level sind die Zugangsdaten in einer IndexedDB-Datenbank versteckt. Verwende den DevTools Application-Tab, um den IndexedDB-Inhalt anzusehen und die 'credentials'-Datenbank zu finden, wo die Zugangsdaten gespeichert sind!"
     },
     "15": {
       "title": "Level 15: WebWorker Nachrichten",
       "description": "Zugangsdaten werden über einen WebWorker gesendet. Fange die Nachricht ab!",
-      "hint": "Prüfe die Konsole auf Worker-Nachrichten. Die Daten werden an einen Worker übergeben und zurückgeloggt."
+      "hint": "Prüfe die Konsole auf Worker-Nachrichten. Die Daten werden an einen Worker übergeben und zurückgeloggt.",
+      "showInfo": "In diesem Level sind die Zugangsdaten in einer WebWorker-Nachricht versteckt. Verwende die Konsole, um Worker-Nachrichten anzusehen und diejenige zu finden, die die Zugangsdaten enthält!"
     },
     "16": {
       "title": "Level 16: Hexadezimale Kodierung",
       "description": "Zugangsdaten sind hexadezimal kodiert. Dekodiere sie!",
-      "hint": "Wandle Hex-Strings in ASCII um. Probiere: String.fromCharCode(...)."
+      "hint": "Wandle Hex-Strings in ASCII um. Probiere: String.fromCharCode(...).",
+      "showInfo": "In diesem Level sind die Zugangsdaten mit hexadezimaler Kodierung versteckt. Verwende Funktionen wie String.fromCharCode() in der Konsole, um Hex-Strings in ASCII-Zeichen umzuwandeln und die Zugangsdaten zu finden!"
     },
     "17": {
       "title": "Level 17: Binärdaten",
       "description": "Zugangsdaten als Binärdaten im ArrayBuffer.",
-      "hint": "Nutze die Konsole, um den ArrayBuffer zu lesen. Probiere: new Uint8Array(window.BINARY_DATA)."
+      "hint": "Nutze die Konsole, um den ArrayBuffer zu lesen. Probiere: new Uint8Array(window.BINARY_DATA).",
+      "showInfo": "In diesem Level sind die Zugangsdaten in einem ArrayBuffer als Binärdaten versteckt. Verwende die Konsole, um den ArrayBuffer zu lesen, z.B. mit new Uint8Array(), um die Zugangsdaten zu finden!"
     },
     "18": {
       "title": "Level 18: Shadow DOM Geheimnisse",
       "description": "Zugangsdaten im Shadow DOM versteckt. Inspiziere den DOM-Baum!",
-      "hint": "Inspector zeigt Shadow DOM an. Suche nach #shadow-root."
+      "hint": "Inspector zeigt Shadow DOM an. Suche nach #shadow-root.",
+      "showInfo": "In diesem Level sind die Zugangsdaten im Shadow DOM versteckt. Verwende den Inspector, um den DOM-Baum anzusehen und das #shadow-root-Element zu finden, wo die Zugangsdaten gespeichert sind!"
     },
     "19": {
       "title": "Level 19: Gemischte Chiffre",
-      "description": "Zugangsdaten mit mehreren Schichten kodiert: Hex + Base64 + ROT13.",
-      "hint": "Dekodiere Schritt für Schritt: Hex → Base64 → ROT13. Nutze Online-Tools oder JS-Funktionen."
+      "description": "Zugangsdaten mit mehreren Schichten kodiert: Base64 + ROT13 + Hex.",
+      "hint": "Dekodiere Schritt für Schritt: Hex → Base64 → ROT13. Nutze Online-Tools oder JS-Funktionen.",
+      "showInfo": "In diesem Level sind die Zugangsdaten mit mehreren Schichten kodiert: zuerst Base64, dann ROT13, schließlich hexadezimal. Dekodiere Schritt für Schritt, um die Zugangsdaten zu finden!",
+      "consoleLog": "Benutzername und Passwort kodiert gespeichert! Dekodiere sie!"
     },
     "20": {
       "title": "Level 20: ULTIMATE CHALLENGE",
       "description": "Alle Techniken kombiniert. Volle Obfuskation und mehrfache Kodierung.",
-      "hint": "Nutze alle Fähigkeiten: Inspector, Console, Network, dekodiere mehrere Formate, prüfe alle Speicherarten."
+      "hint": "Nutze alle Fähigkeiten: Inspector, Console, Network, dekodiere mehrere Formate, prüfe alle Speicherarten.",
+      "showInfo": "In diesem letzten Level sind alle vorherigen Techniken kombiniert: die Zugangsdaten sind mit mehreren Schichten kodiert und an verschiedenen Orten gespeichert. Nutze alle gelernten Fähigkeiten, um diese Herausforderung zu knacken!"
     }
   },
   "language": {

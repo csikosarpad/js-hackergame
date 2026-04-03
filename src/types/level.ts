@@ -5,6 +5,9 @@ export interface Level {
     username: string;
     password: string;
     hint: string;
+    hint2?: string;
+    showInfo?: string;
+    consoleLog?: string;
     difficulty: 'easy' | 'medium' | 'hard' | 'insane';
     challenge: string; // HTML/CSS/JS obfuscation
 }

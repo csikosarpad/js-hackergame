@@ -1,12 +1,12 @@
 {
   "app": {
-    "consoleLine1": "🛡️ JS HACKERGAME - Biztonsági Kihívás",
+    "consoleLine1": "🛡️ JS - FRONT-END HACKERGAME - Biztonsági Kihívás",
     "consoleLine2": "Nyisd meg a DevTools-t (F12) és használd az Inspectort a hitelesítő adatok megtalálásához!",
     "consoleLine3": "Kezdetben könnyű, majd egyre nehezebb lesz...",
     "completedAll": "🎉 Gratulálunk! Minden 20 szintet megfejtettél!"
   },
   "selector": {
-    "title": "🛡️ HACKERGAME",
+    "title": "🛡️ JS - FRONT-END HACKERGAME",
     "subtitle": "Progresszív Biztonsági Kihívás - Találd meg a felhasználónevet és jelszót",
     "tipsTitle": "Tippek:",
     "tip1": "Használd a DevTools-t (F12)",
@@ -18,6 +18,8 @@
     "levelNotFound": "A szint nem található",
     "difficulty": "Nehézség",
     "showHint": "💡 Tipp megjelenítése",
+    "showHint2": "💡 További tipp megjelenítése",
+    "showInfo": "ℹ️ + Információ megjelenítése",
     "enterCredentials": "🔐 Add meg a hitelesítő adatokat",
     "username": "Felhasználónév",
     "password": "Jelszó",
@@ -42,92 +44,113 @@
     "3": {
       "title": "3. szint: DOM manipuláció",
       "description": "A JavaScript konzolban rejtették el a hitelesítő adatokat.",
-      "hint": "Ellenőrizd a Console fület - keresd a logolt üzeneteket vagy változókat."
+      "hint": "Ellenőrizd a Console fület - keresd a logolt üzeneteket vagy változókat.",
+      "hint2": "Írd a konzolba: 'DEBUG_CREDENTIALS'",
+      "showInfo": "Ebben a szintben a hitelesítő adatok egy JavaScript változóban vannak elrejtve, és a konzolra vannak logolva. Keresd meg a változó nevét és értékét a Console-ban!"
     },
     "4": {
       "title": "4. szint: HTML attribútumok",
       "description": "Az adatok HTML attribútumokba vannak elmentve. Ellenőrizd az Inspect-tel az elemet!",
-      "hint": "Keresd a data-* attribútumokat vagy rejtett input mezőket."
+      "hint": "Keresd a data-* attribútumokat vagy rejtett input mezőket.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok HTML attribútumokban vannak elrejtve, például data-username és data-password. Használd az Inspectort, hogy megtaláld ezeket az attribútumokat és olvasd ki az értékeket!"
     },
     "5": {
       "title": "5. szint: Base64 kódolás",
       "description": "A hitelesítő adatok kódoltak. Használd a konzolt a dekódoláshoz.",
-      "hint": "Próbáld ki az atob() függvényt a konzolban: atob(\"encoded_string\")"
+      "hint": "Próbáld ki az atob() függvényt a konzolban: atob(\"encoded_string\")",
+      "showInfo": "A Base64 kódolás egy gyakori módszer a hitelesítő adatok rejtésére. A dekódoláshoz használd az atob() függvényt a konzolban."
     },
     "6": {
       "title": "6. szint: CSS injekció",
       "description": "Találd meg a jelszót a CSS fájlban.",
-      "hint": "Ellenőrizd a Network fület CSS fájlokért, vagy keress furcsa inline stílusokat."
+      "hint": "Ellenőrizd a Network fület CSS fájlokért, vagy keress furcsa inline stílusokat.",
+      "showInfo": "Ebben a szintben a jelszó egy CSS fájlban van elrejtve. Használd a DevTools Network fület, hogy megtaláld a CSS fájlt, majd keresd meg benne a jelszót!"
     },
     "7": {
       "title": "7. szint: Minified JavaScript",
       "description": "A deobfuszkált JavaScript tartalmazza a jelszót.",
-      "hint": "Nézd meg a Console-t vagy szépen formázd a JavaScriptet. Keresd a string összeillesztést."
+      "hint": "Nézd meg a Console-t vagy szépen formázd a JavaScriptet. Keresd a string összeillesztést.",
+      "hint2": "Ebben a szintben a jelszó egy minified JavaScript fájlban van elrejtve. Használd a DevTools-t a fájl megnyitásához, majd a 'Pretty Print' funkciót a kód olvashatóvá tételéhez. Keresd meg a jelszót a változók között!",
+      "showInfo": "A minified JavaScript fájlok nehezen olvashatóak, de a DevTools 'Pretty Print' funkciójával szépen formázhatod őket. Ebben a szintben a jelszó egy ilyen fájlban van elrejtve, és string összeillesztéssel van megadva. Keresd meg a változókat, amelyek össze vannak illesztve, és próbáld meg rekonstruálni a jelszót!"
     },
     "8": {
       "title": "8. szint: LocalStorage nyomozás",
       "description": "Ellenőrizd az Application/Storage fület LocalStorage titkokért.",
-      "hint": "Jobb klikk → Inspect → Application → LocalStorage. Keresd a mentett értékeket."
+      "hint": "Jobb klikk → Inspect → Application → LocalStorage. Keresd a mentett értékeket.",
+      "showInfo": "A localStorage egy gyakori hely a hitelesítő adatok tárolására. Használd a DevTools Application fület, hogy megnézd a LocalStorage tartalmát, és keresd meg a hitelesítő adatokat!"
     },
     "9": {
       "title": "9. szint: Hálózati kérés",
       "description": "A hitelesítő adatok háttérben XHR-lekéréssel jönnek.",
-      "hint": "Ellenőrizd a Network fület oldalbetöltéskor. Keresd az API hívásokat vagy adat végpontokat."
+      "hint": "Ellenőrizd a Network fület oldalbetöltéskor. Keresd az API hívásokat vagy adat végpontokat.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok egy hálózati kérésben vannak elrejtve. Használd a DevTools Network fület, hogy megnézd az összes hálózati kérést, és keresd meg azt, amelyik tartalmazza a hitelesítő adatokat!"
     },
     "10": {
       "title": "10. szint: Cookie kivonás",
       "description": "Keresd a hitelesítő adatokat cookie-kban vagy sessionStorage-ban.",
-      "hint": "Console → document.cookie vagy Application fül → Cookies."
+      "hint": "Console → document.cookie vagy Application fül → Cookies.",
+      "showInfo": "A cookie-k és a sessionStorage gyakori helyek a hitelesítő adatok tárolására. Használd a Console-t a document.cookie megtekintéséhez, vagy az Application fület a Cookies megtekintéséhez, és keresd meg a hitelesítő adatokat!"
     },
     "11": {
       "title": "11. szint: Regex mintázatillesztés",
       "description": "A hitelesítő adatok regex mintázatokban rejtőznek. Dekódold őket!",
-      "hint": "Nyisd meg a Console-t és keresd a regex mintázatokat. Próbáld ki a kiértékelést vagy a globális változókat."
+      "hint": "Nyisd meg a Console-t és keresd a regex mintázatokat. Próbáld ki a kiértékelést vagy a globális változókat.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok egy regex mintázatban vannak elrejtve. Használd a Console-t, hogy megtaláld a regex mintázatot, majd próbáld meg dekódolni a hitelesítő adatokat a mintázat alapján!"
     },
     "12": {
       "title": "12. szint: Láncolt Base64",
       "description": "Több rétegű Base64 kódolás. Dekódold rekurzívan!",
-      "hint": "Használd többször az atob()-t. Próbáld: atob(atob(atob(encoded_var)))"
+      "hint": "Használd többször az atob()-t. Próbáld: atob(atob(atob(encoded_var)))",
+      "showInfo": "Ebben a szintben a hitelesítő adatok több rétegű Base64 kódolással vannak elrejtve. Használd az atob() függvényt többször a konzolban, hogy rekurzívan dekódold a hitelesítő adatokat!"
     },
     "13": {
       "title": "13. szint: CSS egyéni tulajdonságok",
       "description": "A hitelesítő adatok CSS változókban vannak tárolva.",
-      "hint": "Inspecteld a stílusokat. Keresd a --username és --password CSS változókat. Kapsz értéket getComputedStyle()-lal."
+      "hint": "Inspecteld a stílusokat. Keresd a --username és --password CSS változókat. Kapsz értéket getComputedStyle()-lal.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok CSS egyéni tulajdonságokban (változókban) vannak elrejtve. Használd az Inspectort, hogy megtaláld ezeket a változókat, majd a getComputedStyle() függvényt a konzolban, hogy kiolvasd az értékeket!"
     },
     "14": {
       "title": "14. szint: IndexedDB tárolás",
       "description": "A hitelesítő adatok IndexedDB-ben vannak tárolva. Ellenőrizd az Application fület!",
-      "hint": "DevTools → Application → IndexedDB. Nyisd meg a 'credentials' adatbázist és keresd az értékeket."
+      "hint": "DevTools → Application → IndexedDB. Nyisd meg a 'credentials' adatbázist és keresd az értékeket.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok egy IndexedDB adatbázisban vannak elrejtve. Használd a DevTools Application fület, hogy megnézd az IndexedDB tartalmát, és keresd meg a 'credentials' adatbázist, ahol a hitelesítő adatok vannak tárolva!"
     },
     "15": {
       "title": "15. szint: WebWorker üzenetek",
       "description": "A hitelesítő adatok Web Worker-en keresztül érkeznek. Fogd el az üzenetet!",
-      "hint": "Nézd meg a Console-t worker üzenetekért. A hitelesítő adatok egy Worker-nek vannak átadva és visszalogolva."
+      "hint": "Nézd meg a Console-t worker üzenetekért. A hitelesítő adatok egy Worker-nek vannak átadva és visszalogolva.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok egy Web Worker üzenetben vannak elrejtve. Használd a Console-t, hogy megnézd a worker üzeneteket, és keresd meg azt, amelyik tartalmazza a hitelesítő adatokat!"
     },
     "16": {
       "title": "16. szint: Hexadecimális kódolás",
       "description": "A hitelesítő adatok hexadecimálisan vannak kódolva. Dekódold őket!",
-      "hint": "Alakítsd át a hex stringeket ASCII-vá. Próbáld: String.fromCharCode(...)."
+      "hint": "Alakítsd át a hex stringeket ASCII-vá. Próbáld: String.fromCharCode(...).",
+      "showInfo": "Ebben a szintben a hitelesítő adatok hexadecimális kódolással vannak elrejtve. Használd pl. a String.fromCharCode() függvényt a konzolban, hogy átalakítsd a hex stringeket ASCII karakterekké, és így megtaláld a hitelesítő adatokat!"
     },
     "17": {
       "title": "17. szint: Bináris adat",
       "description": "A hitelesítő adatok ArrayBuffer-ben tárolódnak bináris formában.",
-      "hint": "Használd a Console-t az ArrayBuffer olvasásához. Próbáld: new Uint8Array(window.BINARY_DATA)."
+      "hint": "Használd a Console-t az ArrayBuffer olvasásához. Próbáld: window.BINARY_DATA",
+      "showInfo": "Ebben a szintben a hitelesítő adatok egy ArrayBuffer-ben vannak elrejtve bináris formában. Használd a Console-t, hogy olvasd az ArrayBuffer-t, pl. String.fromCharCode(...Object.values(BINARY_DATA.user))!"
     },
     "18": {
       "title": "18. szint: Shadow DOM titkok",
       "description": "A hitelesítő adatok a Shadow DOM-ban vannak elrejtve. Inspecteld a DOM fát!",
-      "hint": "Az Inspector megmutatja a Shadow DOM-ot. Keresd a #shadow-root elemet."
+      "hint": "Az Inspector megmutatja a Shadow DOM-ot. Keresd a #shadow-root elemet.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok a Shadow DOM-ban vannak elrejtve. Használd az Inspectort, hogy megnézd a DOM fát, és keresd meg a #shadow-root elemet, ahol a hitelesítő adatok vannak tárolva!"
     },
     "19": {
       "title": "19. szint: Vegyes titkosítás",
-      "description": "A hitelesítő adatok többrétegűen vannak kódolva: Hex + Base64 + ROT13.",
-      "hint": "Dekódold lépésről lépésre: Hex → Base64 → ROT13. Használj online eszközöket vagy JS függvényeket."
+      "description": "A hitelesítő adatok többrétegűen vannak kódolva: Base64 + ROT13 + Hex.",
+      "hint": "Dekódold lépésről lépésre: Base64 → ROT13 → Hex. Használj online eszközöket vagy JS függvényeket.",
+      "showInfo": "Ebben a szintben a hitelesítő adatok több rétegű kódolással vannak elrejtve: először Base64, majd ROT13 végül hexadecimális (stringToHex). Dekódold lépésről lépésre, hogy megtaláld a hitelesítő adatokat!",
+      "consoleLog": "Elkódolt username és password tárolva! Dekódold őket!"
     },
     "20": {
       "title": "20. szint: ULTIMATE CHALLENGE",
       "description": "Minden technika kombinálva. Teljes obfuszkáció és több rétegű kódolás.",
-      "hint": "Használd az összes skillodat: Inspector, Console, Network, dekódolj több formátumot, nézd az összes tárolási módot."
+      "hint": "Használd az összes skill-t: Inspector, Console, Network, dekódolj több formátumot, nézd az összes tárolási módot.",
+      "showInfo": "Ebben a végső szintben minden korábbi technika kombinálva van: a hitelesítő adatok több rétegű kódolással vannak elrejtve, és különböző helyeken tárolódnak. Használd az összes eddig tanult skill-t, hogy megfejtsd ezt a kihívást!"
     }
   },
   "language": {

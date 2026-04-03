@@ -93,6 +93,24 @@ export default function ChallengePanel({ level, onSuccess, onBack }: ChallengePr
                         </p>
                     </details>
 
+                    {level?.showInfo && <details className="mb-6">
+                        <summary className="cursor-pointer text-neon-purple hover:text-neon-blue transition">
+                            {t('challenge.showInfo')}
+                        </summary>
+                        <p className="mt-3 text-sm text-gray-300 bg-dark-bg rounded p-3 border-l-2 border-neon-purple">
+                            {t(`level.${level.id}.showInfo`, { defaultValue: level.showInfo })}
+                        </p>
+                    </details>}
+
+                    {level?.hint2 && <details className="mb-6">
+                        <summary className="cursor-pointer text-neon-purple hover:text-neon-blue transition">
+                            {t('challenge.showHint2', { defaultValue: '💡 Additional Hint' })}
+                        </summary>
+                        <p className="mt-3 text-sm text-gray-300 bg-dark-bg rounded p-3 border-l-2 border-neon-purple">
+                            {t(`level.${level.id}.hint2`, { defaultValue: level.hint2 })}
+                        </p>
+                    </details>}
+
                     {/* Challenge Content */}
                     <div className="bg-dark-bg rounded p-4 border border-gray-700 mb-6 overflow-auto max-h-64">
                         <div

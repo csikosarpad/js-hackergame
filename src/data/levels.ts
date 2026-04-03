@@ -41,6 +41,8 @@ export function getLEVELS() {
       username: 'hacker',
       password: 'console_log_me',
       hint: t('levels.3.hint'),
+      hint2: t('levels.3.hint2'),
+      showInfo: t('levels.3.showInfo'),
       difficulty: 'easy',
       challenge: `
       <script>
@@ -51,7 +53,6 @@ export function getLEVELS() {
         console.log('%cCredentials:', 'color: #00ff41; font-size: 14px;', credentials);
         window.DEBUG_CREDENTIALS = credentials;
       </script>
-      <p>Hint: Try typing 'DEBUG_CREDENTIALS' in the console...</p>
     `,
     },
     {
@@ -312,12 +313,11 @@ export function getLEVELS() {
       difficulty: 'insane',
       challenge: `
       <script>
-        const hexUser = '68657830305f6d6173746572'.split('').reverse().join('');
-        const hexPass = '7061787pha865735f656e636f646564'.split('').reverse().join('');
-        const user = hexUser.match(/.{1,2}/g).map(x => String.fromCharCode(parseInt(x, 16))).join('');
-        const pass = 'pass_encoded_via_hex'; // Simplified for demo
+        const toHex = str => Array.from(new TextEncoder().encode(str)).map(b => b.toString(16).padStart(2, '0')).join('');
+        const user = toHex('hex_master');
+        const pass = toHex('hex_encoded_pass');      
         
-        window.HEX_CREDS = { user: 'hex_master', pass: 'hex_encoded_pass' };
+        window.HEX_CREDS = { user: user, pass: pass };
         console.log('Hint: Check window.HEX_CREDS');
       </script>
     `,
@@ -329,6 +329,7 @@ export function getLEVELS() {
       username: 'binary_seeker',
       password: 'binary_secrets',
       hint: t('levels.17.hint'),
+      showInfo: t('levels.17.showInfo'),
       difficulty: 'insane',
       challenge: `
       <script>
@@ -341,8 +342,8 @@ export function getLEVELS() {
         window.BINARY_DATA = {
           userBytes: userBytes.buffer,
           passBytes: passBytes.buffer,
-          user: user,
-          pass: pass
+          user: userBytes,
+          pass: passBytes
         };
         
         console.log('Binary credentials stored. Check window.BINARY_DATA');
@@ -365,11 +366,11 @@ export function getLEVELS() {
         
         shadow.innerHTML = \`
           <style>
-            div { color: #00ff41; }
+            div { display: none; }
           </style>
-          <div>
+          <div>          
             Username: shadow_walker | Password: shadow_dom_master
-          </div>
+            </div>
         \`;
       </script>
     `,
@@ -381,6 +382,7 @@ export function getLEVELS() {
       username: 'cipher_expert',
       password: 'triple_encrypted',
       hint: t('levels.19.hint'),
+      showInfo: t('levels.19.showInfo'),
       difficulty: 'insane',
       challenge: `
       <script>
@@ -394,13 +396,14 @@ export function getLEVELS() {
         const password = 'triple_encrypted';
         
         const base64User = btoa(username);
+        const base64Pass = btoa(password);
         const rot13User = rot13(base64User);
+        const rot13Pass = rot13(base64Pass);
         const hexUser = Array.from(rot13User).map(c => c.charCodeAt(0).toString(16)).join('');
+        const hexPass = Array.from(rot13Pass).map(c => c.charCodeAt(0).toString(16)).join('');
         
-        window.CIPHER_USER = hexUser;
-        window.CIPHER_PASS = 'triple_encrypted'; // Simplified
-        
-        console.log('Encoded username stored. Decode it!');
+        window.CIPHER={ USER: hexUser, PASS: hexPass }; // Simplified
+        console.log('Encoded username and password stored. Decode them!');
       </script>
     `,
     },
@@ -411,6 +414,7 @@ export function getLEVELS() {
       username: 'ultimate_hacker',
       password: 'master_of_security',
       hint: t('levels.20.hint'),
+      showInfo: t('levels.20.showInfo'),
       difficulty: 'insane',
       challenge: `
       <script>
