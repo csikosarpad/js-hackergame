@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { LEVELS } from '@/data/levels';
+import { getLEVELS } from '@/data/levels';
 
 interface LevelSelectorProps {
     onSelectLevel: (levelId: number) => void;
@@ -8,6 +8,7 @@ interface LevelSelectorProps {
 
 export default function LevelSelector({ onSelectLevel, completedLevels }: LevelSelectorProps) {
     const { t } = useTranslation();
+    const LEVELS = getLEVELS();
     const totalLevels = LEVELS.length;
     const completedCount = completedLevels.length;
     const unlockedLevel = completedLevels.length === 0 ? 1 : Math.max(...completedLevels) + 1;

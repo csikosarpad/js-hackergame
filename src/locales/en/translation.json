@@ -1,139 +1,139 @@
 {
-    "app": {
-        "consoleLine1": "🛡️ JS HACKERGAME - Security Challenge",
-        "consoleLine2": "Open DevTools (F12) and use Inspector to find credentials!",
-        "consoleLine3": "Starts easy, gets progressively harder...",
-        "completedAll": "🎉 Congratulations! You cracked all 20 levels!"
+  "app": {
+    "consoleLine1": "🛡️ JS HACKERGAME - Security Challenge",
+    "consoleLine2": "Open DevTools (F12) and use Inspector to find credentials!",
+    "consoleLine3": "Starts easy, gets progressively harder...",
+    "completedAll": "🎉 Congratulations! You cracked all 20 levels!"
+  },
+  "selector": {
+    "title": "🛡️ HACKERGAME",
+    "subtitle": "Progressive Security Challenge - Find Username & Password",
+    "tipsTitle": "Tips:",
+    "tip1": "Use your browser's Developer Tools (F12)",
+    "tip2": "Press F12 → Inspector tab to inspect HTML",
+    "tip3": "Use Console tab to execute JavaScript commands",
+    "levelsCompleted": "{{count}} / {{total}} Levels Completed ({{percent}}%)"
+  },
+  "challenge": {
+    "levelNotFound": "Level not found",
+    "difficulty": "Difficulty",
+    "showHint": "💡 Show Hint",
+    "enterCredentials": "🔐 Enter Credentials",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Submit",
+    "back": "Back",
+    "incorrect": "❌ Incorrect credentials. Try again!",
+    "levelComplete": "✅ Level Complete! Moving to next...",
+    "devtoolsHelp": "💻 Use DevTools (F12) to inspect the page and find the credentials",
+    "devtoolsAreas": "Inspector • Console • Network • Application"
+  },
+  "levels": {
+    "1": {
+      "title": "Level 1: Plain Sight",
+      "description": "The credentials are hidden in plain sight. Check the Inspector!",
+      "hint": "Look at the HTML source. The answer is written in black text on black background."
     },
-    "selector": {
-        "title": "🛡️ HACKERGAME",
-        "subtitle": "Progressive Security Challenge - Find Username & Password",
-        "tipsTitle": "Tips:",
-        "tip1": "Use your browser's Developer Tools (F12)",
-        "tip2": "Press F12 → Inspector tab to inspect HTML",
-        "tip3": "Use Console tab to execute JavaScript commands",
-        "levelsCompleted": "{{count}} / {{total}} Levels Completed ({{percent}}%)"
+    "2": {
+      "title": "Level 2: CSS Hidden",
+      "description": "Use DevTools Inspector to uncover hidden styles.",
+      "hint": "The password might be hidden with CSS display: none or opacity: 0"
     },
-    "challenge": {
-        "levelNotFound": "Level not found",
-        "difficulty": "Difficulty",
-        "showHint": "💡 Show Hint",
-        "enterCredentials": "🔐 Enter Credentials",
-        "username": "Username",
-        "password": "Password",
-        "submit": "Submit",
-        "back": "Back",
-        "incorrect": "❌ Incorrect credentials. Try again!",
-        "levelComplete": "✅ Level Complete! Moving to next...",
-        "devtoolsHelp": "💻 Use DevTools (F12) to inspect the page and find the credentials",
-        "devtoolsAreas": "Inspector • Console • Network • Application"
+    "3": {
+      "title": "Level 3: DOM Manipulation",
+      "description": "The JavaScript console has been used to hide the credentials.",
+      "hint": "Check the Console tab - look for logged messages or variables."
     },
-    "levels": {
-        "1": {
-            "title": "Level 1: Plain Sight",
-            "description": "The credentials are hidden in plain sight. Check the Inspector!",
-            "hint": "Look at the HTML source. The answer is written in black text on black background."
-        },
-        "2": {
-            "title": "Level 2: CSS Hidden",
-            "description": "Use DevTools Inspector to uncover hidden styles.",
-            "hint": "The password might be hidden with CSS display: none or opacity: 0"
-        },
-        "3": {
-            "title": "Level 3: DOM Manipulation",
-            "description": "The JavaScript console has been used to hide the credentials.",
-            "hint": "Check the Console tab - look for logged messages or variables."            
-        },
-        "4": {
-            "title": "Level 4: HTML Attributes",
-            "description": "Data is stored in HTML attributes. Inspect the elements!",
-            "hint": "Look for data-* attributes or hidden input fields."
-        },
-        "5": {
-            "title": "Level 5: Base64 Encoding",
-            "description": "The credentials are encoded. Use the Console to decode.",
-            "hint": "Try using atob() function in the console: atob(\"encoded_string\")"
-        },
-        "6": {
-            "title": "Level 6: CSS Injection",
-            "description": "Find the password hidden in the CSS file.",
-            "hint": "Check the Network tab for CSS files, or look for inline styles with unusual content."
-        },
-        "7": {
-            "title": "Level 7: JavaScript Minified",
-            "description": "Deobfuscated JavaScript contains the password.",
-            "hint": "Check the Console or beautify the JavaScript. Look for string concatenation."
-        },
-        "8": {
-            "title": "Level 8: Local Storage Hunt",
-            "description": "Check the Application/Storage tab for LocalStorage secrets.",
-            "hint": "Right-click → Inspect → Application tab → LocalStorage. Look for stored values."
-        },
-        "9": {
-            "title": "Level 9: Network Request",
-            "description": "The credentials are fetched via XHR in the background.",
-            "hint": "Check the Network tab when the page loads. Look for API calls or data endpoints."
-        },
-        "10": {
-            "title": "Level 10: Cookie Extraction",
-            "description": "Look for credentials hidden in cookies or sessionStorage.",
-            "hint": "Console → document.cookie or check Application tab → Cookies."
-        },
-        "11": {
-            "title": "Level 11: Regex Pattern Matching",
-            "description": "The credentials are hidden in regex patterns. Decode them!",
-            "hint": "Open Console and check for regex patterns. Try evaluating them or looking in global variables."
-        },
-        "12": {
-            "title": "Level 12: Chained Base64",
-            "description": "Multiple layers of Base64 encoding. Decode recursively!",
-            "hint": "Use atob() multiple times. Try: atob(atob(atob(encoded_var)))"
-        },
-        "13": {
-            "title": "Level 13: CSS Custom Properties",
-            "description": "Credentials stored in CSS custom properties (variables).",
-            "hint": "Inspect element styles. Look for --username and --password CSS variables. Get them via getComputedStyle()."
-        },
-        "14": {
-            "title": "Level 14: IndexedDB Storage",
-            "description": "Credentials stored in IndexedDB database. Check Application tab!",
-            "hint": "DevTools → Application → IndexedDB. Open the 'credentials' database and find the data."
-        },
-        "15": {
-            "title": "Level 15: WebWorker Messages",
-            "description": "Credentials transmitted via Web Worker. Intercept the message!",
-            "hint": "Check Console for worker messages. The credentials are passed to a Worker and logged back."
-        },
-        "16": {
-            "title": "Level 16: Hexadecimal Encoding",
-            "description": "Credentials encoded in hexadecimal. Decode them!",
-            "hint": "Convert hex strings to ASCII. Try: String.fromCharCode(...)."
-        },
-        "17": {
-            "title": "Level 17: Binary Data",
-            "description": "Credentials stored as binary data in an ArrayBuffer.",
-            "hint": "Use the Console to read the ArrayBuffer. Try: new Uint8Array(window.BINARY_DATA)."
-        },
-        "18": {
-            "title": "Level 18: Shadow DOM Secrets",
-            "description": "Credentials hidden in Shadow DOM. Inspect the DOM tree!",
-            "hint": "Inspector shows Shadow DOM. Look for #shadow-root in the DOM tree."
-        },
-        "19": {
-            "title": "Level 19: Mixed Cipher",
-            "description": "Credentials encoded with multiple layers: Hex + Base64 + ROT13.",
-            "hint": "Decode step by step: Hex → Base64 → ROT13. Use online tools or JS functions."
-        },
-        "20": {
-            "title": "Level 20: ULTIMATE CHALLENGE",
-            "description": "All techniques combined. Full obfuscation and multiple encoding layers.",
-            "hint": "Use ALL your skills: Inspector, Console, Network, decode multiple formats, check all storage types."
-        }
+    "4": {
+      "title": "Level 4: HTML Attributes",
+      "description": "Data is stored in HTML attributes. Inspect the elements!",
+      "hint": "Look for data-* attributes or hidden input fields."
     },
-    "language": {
-        "label": "Language",
-        "en": "English",
-        "hu": "Magyar",
-        "de": "Deutsch"
+    "5": {
+      "title": "Level 5: Base64 Encoding",
+      "description": "The credentials are encoded. Use the Console to decode.",
+      "hint": "Try using atob() function in the console: atob(\"encoded_string\")"
+    },
+    "6": {
+      "title": "Level 6: CSS Injection",
+      "description": "Find the password hidden in the CSS file.",
+      "hint": "Check the Network tab for CSS files, or look for inline styles with unusual content."
+    },
+    "7": {
+      "title": "Level 7: JavaScript Minified",
+      "description": "Deobfuscated JavaScript contains the password.",
+      "hint": "Check the Console or beautify the JavaScript. Look for string concatenation."
+    },
+    "8": {
+      "title": "Level 8: Local Storage Hunt",
+      "description": "Check the Application/Storage tab for LocalStorage secrets.",
+      "hint": "Right-click → Inspect → Application tab → LocalStorage. Look for stored values."
+    },
+    "9": {
+      "title": "Level 9: Network Request",
+      "description": "The credentials are fetched via XHR in the background.",
+      "hint": "Check the Network tab when the page loads. Look for API calls or data endpoints."
+    },
+    "10": {
+      "title": "Level 10: Cookie Extraction",
+      "description": "Look for credentials hidden in cookies or sessionStorage.",
+      "hint": "Console → document.cookie or check Application tab → Cookies."
+    },
+    "11": {
+      "title": "Level 11: Regex Pattern Matching",
+      "description": "The credentials are hidden in regex patterns. Decode them!",
+      "hint": "Open Console and check for regex patterns. Try evaluating them or looking in global variables."
+    },
+    "12": {
+      "title": "Level 12: Chained Base64",
+      "description": "Multiple layers of Base64 encoding. Decode recursively!",
+      "hint": "Use atob() multiple times. Try: atob(atob(atob(encoded_var)))"
+    },
+    "13": {
+      "title": "Level 13: CSS Custom Properties",
+      "description": "Credentials stored in CSS custom properties (variables).",
+      "hint": "Inspect element styles. Look for --username and --password CSS variables. Get them via getComputedStyle()."
+    },
+    "14": {
+      "title": "Level 14: IndexedDB Storage",
+      "description": "Credentials stored in IndexedDB database. Check Application tab!",
+      "hint": "DevTools → Application → IndexedDB. Open the 'credentials' database and find the data."
+    },
+    "15": {
+      "title": "Level 15: WebWorker Messages",
+      "description": "Credentials transmitted via Web Worker. Intercept the message!",
+      "hint": "Check Console for worker messages. The credentials are passed to a Worker and logged back."
+    },
+    "16": {
+      "title": "Level 16: Hexadecimal Encoding",
+      "description": "Credentials encoded in hexadecimal. Decode them!",
+      "hint": "Convert hex strings to ASCII. Try: String.fromCharCode(...)."
+    },
+    "17": {
+      "title": "Level 17: Binary Data",
+      "description": "Credentials stored as binary data in an ArrayBuffer.",
+      "hint": "Use the Console to read the ArrayBuffer. Try: new Uint8Array(window.BINARY_DATA)."
+    },
+    "18": {
+      "title": "Level 18: Shadow DOM Secrets",
+      "description": "Credentials hidden in Shadow DOM. Inspect the DOM tree!",
+      "hint": "Inspector shows Shadow DOM. Look for #shadow-root in the DOM tree."
+    },
+    "19": {
+      "title": "Level 19: Mixed Cipher",
+      "description": "Credentials encoded with multiple layers: Hex + Base64 + ROT13.",
+      "hint": "Decode step by step: Hex → Base64 → ROT13. Use online tools or JS functions."
+    },
+    "20": {
+      "title": "Level 20: ULTIMATE CHALLENGE",
+      "description": "All techniques combined. Full obfuscation and multiple encoding layers.",
+      "hint": "Use ALL your skills: Inspector, Console, Network, decode multiple formats, check all storage types."
     }
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "hu": "Hungarian",
+    "de": "German"
+  }
 }

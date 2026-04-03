@@ -1,45 +1,48 @@
 import { Level } from '@/types/level';
+import { useTranslation } from 'react-i18next';
 
-export const LEVELS: Level[] = [
-  {
-    id: 1,
-    title: 'Level 1: Plain Sight',
-    description: 'The credentials are hidden in plain sight. Check the Inspector!',
-    username: 'admin',
-    password: 'password123',
-    hint: 'Look at the HTML source. The answer is written in black text on black background.',
-    difficulty: 'easy',
-    challenge: `
+export function getLEVELS() {
+  const { t } = useTranslation();
+  const LEVELS: Level[] = [
+    {
+      id: 1,
+      title: t('levels.1.title'),
+      description: t('levels.1.description'),
+      username: 'admin',
+      password: 'password123',
+      hint: t('levels.1.hint'),
+      difficulty: 'easy',
+      challenge: `
       <div style="color: black; background-color: black; padding: 20px;">
         <p>Username: admin</p>
         <p>Password: password123</p>
       </div>
     `,
-  },
-  {
-    id: 2,
-    title: 'Level 2: CSS Hidden',
-    description: 'Use DevTools Inspector to uncover hidden styles.',
-    username: 'user',
-    password: 'hacked2025',
-    hint: 'The password might be hidden with CSS display: none or opacity: 0',
-    difficulty: 'easy',
-    challenge: `
+    },
+    {
+      id: 2,
+      title: t('levels.2.title'),
+      description: t('levels.2.description'),
+      username: 'user',
+      password: 'hacked2025',
+      hint: t('levels.2.hint'),
+      difficulty: 'easy',
+      challenge: `
       <div style="display: none;">
         Username: user | Password: hacked2025
       </div>
       <p style="opacity: 0; position: absolute;">Secret: hacked2025</p>
     `,
-  },
-  {
-    id: 3,
-    title: 'Level 3: DOM Manipulation',
-    description: 'The JavaScript console has been used to hide the credentials.',
-    username: 'hacker',
-    password: 'console_log_me',
-    hint: 'Check the Console tab - look for logged messages or variables.',
-    difficulty: 'easy',
-    challenge: `
+    },
+    {
+      id: 3,
+      title: t('levels.3.title'),
+      description: t('levels.3.description'),
+      username: 'hacker',
+      password: 'console_log_me',
+      hint: t('levels.3.hint'),
+      difficulty: 'easy',
+      challenge: `
       <script>
         const credentials = {
           user: 'hacker',
@@ -50,31 +53,31 @@ export const LEVELS: Level[] = [
       </script>
       <p>Hint: Try typing 'DEBUG_CREDENTIALS' in the console...</p>
     `,
-  },
-  {
-    id: 4,
-    title: 'Level 4: HTML Attributes',
-    description: 'Data is stored in HTML attributes. Inspect the elements!',
-    username: 'data_ninja',
-    password: 'attrs_are_fun',
-    hint: 'Look for data-* attributes or hidden input fields.',
-    difficulty: 'medium',
-    challenge: `
+    },
+    {
+      id: 4,
+      title: t('levels.4.title'),
+      description: t('levels.4.description'),
+      username: 'data_ninja',
+      password: 'attrs_are_fun',
+      hint: t('levels.4.hint'),
+      difficulty: 'medium',
+      challenge: `
       <input type="hidden" data-username="data_ninja" data-password="attrs_are_fun" />
       <div data-secret="True credentials are in data attributes">
         <span title="Username: data_ninja | Password: attrs_are_fun">Hover me</span>
       </div>
     `,
-  },
-  {
-    id: 5,
-    title: 'Level 5: Base64 Encoding',
-    description: 'The credentials are encoded. Use the Console to decode.',
-    username: 'coder',
-    password: 'base64_magic',
-    hint: 'Try using atob() function in the console: atob("encoded_string")',
-    difficulty: 'medium',
-    challenge: `
+    },
+    {
+      id: 5,
+      title: t('levels.5.title'),
+      description: t('levels.5.description'),
+      username: 'coder',
+      password: 'base64_magic',
+      hint: t('levels.5.hint'),
+      difficulty: 'medium',
+      challenge: `
       <script>
         const encoded = btoa('coder:base64_magic');
         console.log('Encoded credentials:', encoded);
@@ -82,16 +85,16 @@ export const LEVELS: Level[] = [
       </script>
       <p style="font-family: monospace; color: #00d4ff;">Try: atob(decodeMe) in console</p>
     `,
-  },
-  {
-    id: 6,
-    title: 'Level 6: CSS Injection',
-    description: 'Find the password hidden in the CSS file.',
-    username: 'admin2',
-    password: 'stylesheet_secret',
-    hint: 'Check the Network tab for CSS files, or look for inline styles with unusual content.',
-    difficulty: 'medium',
-    challenge: `
+    },
+    {
+      id: 6,
+      title: t('levels.6.title'),
+      description: t('levels.6.description'),
+      username: 'admin2',
+      password: 'stylesheet_secret',
+      hint: t('levels.6.hint'),
+      difficulty: 'medium',
+      challenge: `
       <style>
         body::before {
           content: 'admin2:stylesheet_secret';
@@ -108,16 +111,16 @@ export const LEVELS: Level[] = [
       </script>
       <div class="secret-data"></div>
     `,
-  },
-  {
-    id: 7,
-    title: 'Level 7: JavaScript Minified',
-    description: 'Deobfuscated JavaScript contains the password.',
-    username: 'minify_me',
-    password: 'obfuscated_pass',
-    hint: 'Check the Console or beautify the JavaScript. Look for string concatenation.',
-    difficulty: 'medium',
-    challenge: `
+    },
+    {
+      id: 7,
+      title: t('levels.7.title'),
+      description: t('levels.7.description'),
+      username: 'minify_me',
+      password: 'obfuscated_pass',
+      hint: t('levels.7.hint'),
+      difficulty: 'medium',
+      challenge: `
       <script>
         const a='m',b='i',c='n',d='i',e='f',f='y',g='_',h='m',i='e';
         const u=a+b+c+d+e+f;
@@ -126,16 +129,16 @@ export const LEVELS: Level[] = [
         window.creds = [u, p];
       </script>
     `,
-  },
-  {
-    id: 8,
-    title: 'Level 8: Local Storage Hunt',
-    description: 'Check the Application/Storage tab for LocalStorage secrets.',
-    username: 'storage_user',
-    password: 'local_storage_key',
-    hint: 'Right-click → Inspect → Application tab → LocalStorage. Look for stored values.',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 8,
+      title: t('levels.8.title'),
+      description: t('levels.8.description'),
+      username: 'storage_user',
+      password: 'local_storage_key',
+      hint: t('levels.8.hint'),
+      difficulty: 'hard',
+      challenge: `
       <script>
         localStorage.setItem('username', 'storage_user');
         localStorage.setItem('credential_hint', 'Check the password variable');
@@ -143,16 +146,16 @@ export const LEVELS: Level[] = [
         console.log('Data saved to LocalStorage');
       </script>
     `,
-  },
-  {
-    id: 9,
-    title: 'Level 9: Network Request',
-    description: 'The credentials are fetched via XHR in the background.',
-    username: 'xhr_user',
-    password: 'network_request_pass',
-    hint: 'Check the Network tab when the page loads. Look for API calls or data endpoints.',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 9,
+      title: t('levels.9.title'),
+      description: t('levels.9.description'),
+      username: 'xhr_user',
+      password: 'network_request_pass',
+      hint: t('levels.9.hint'),
+      difficulty: 'hard',
+      challenge: `
       <script>
         fetch('data:application/json,{"user":"xhr_user","pass":"network_request_pass"}')
           .then(r => r.json())
@@ -163,16 +166,16 @@ export const LEVELS: Level[] = [
       </script>
       <p>Hint: Network request made on page load...</p>
     `,
-  },
-  {
-    id: 10,
-    title: 'Level 10: Cookie Extraction',
-    description: 'Look for credentials hidden in cookies or sessionStorage.',
-    username: 'cookie_monster',
-    password: 'cookie_jar_secret',
-    hint: 'Console → document.cookie or check Application tab → Cookies.',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 10,
+      title: t('levels.10.title'),
+      description: t('levels.10.description'),
+      username: 'cookie_monster',
+      password: 'cookie_jar_secret',
+      hint: t('levels.10.hint'),
+      difficulty: 'hard',
+      challenge: `
       <script>
         document.cookie = 'username=cookie_monster; path=/';
         document.cookie = 'password=cookie_jar_secret; path=/';
@@ -180,16 +183,16 @@ export const LEVELS: Level[] = [
         console.log('Cookies set:', document.cookie);
       </script>
     `,
-  },
-  {
-    id: 11,
-    title: 'Level 11: Regex Pattern Matching',
-    description: 'The credentials are hidden in regex patterns. Decode them!',
-    username: 'regex_master',
-    password: 'pattern_recognition',
-    hint: 'Open Console and check for regex patterns. Try evaluating them or looking in global variables.',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 11,
+      title: t('levels.11.title'),
+      description: t('levels.11.description'),
+      username: 'regex_master',
+      password: 'pattern_recognition',
+      hint: t('levels.11.hint'),
+      difficulty: 'hard',
+      challenge: `
       <script>
         const hiding = /regex_master/.toString() + '/' + /pattern_recognition/.toString();
         const parts = hiding.match(/[a-z_]+/g);
@@ -197,16 +200,16 @@ export const LEVELS: Level[] = [
         console.log('Regex parts stored:', parts);
       </script>
     `,
-  },
-  {
-    id: 12,
-    title: 'Level 12: Chained Base64',
-    description: 'Multiple layers of Base64 encoding. Decode recursively!',
-    username: 'layer_decoder',
-    password: 'nested_secrets',
-    hint: 'Use atob() multiple times. Try: atob(atob(atob(encoded_var)))',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 12,
+      title: t('levels.12.title'),
+      description: t('levels.12.description'),
+      username: 'layer_decoder',
+      password: 'nested_secrets',
+      hint: t('levels.12.hint'),
+      difficulty: 'hard',
+      challenge: `
       <script>
         const data1 = btoa('layer_decoder');
         const data2 = btoa(btoa(data1));
@@ -217,16 +220,16 @@ export const LEVELS: Level[] = [
         console.log('Password (triple encoded):', data3);
       </script>
     `,
-  },
-  {
-    id: 13,
-    title: 'Level 13: CSS Custom Properties',
-    description: 'Credentials stored in CSS custom properties (variables).',
-    username: 'css_ninja',
-    password: 'custom_prop_secret',
-    hint: 'Inspect element styles. Look for --username and --password CSS variables. Get them via getComputedStyle().',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 13,
+      title: t('levels.13.title'),
+      description: t('levels.13.description'),
+      username: 'css_ninja',
+      password: 'custom_prop_secret',
+      hint: t('levels.13.hint'),
+      difficulty: 'hard',
+      challenge: `
       <style>
         :root {
           --username: 'css_ninja';
@@ -245,16 +248,16 @@ export const LEVELS: Level[] = [
         window.CSS_CREDS = { username, password };
       </script>
     `,
-  },
-  {
-    id: 14,
-    title: 'Level 14: IndexedDB Storage',
-    description: 'Credentials stored in IndexedDB database. Check Application tab!',
-    username: 'db_admin',
-    password: 'indexed_db_master',
-    hint: 'DevTools → Application → IndexedDB. Open the "credentials" database and find the data.',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 14,
+      title: t('levels.14.title'),
+      description: t('levels.14.description'),
+      username: 'db_admin',
+      password: 'indexed_db_master',
+      hint: t('levels.14.hint'),
+      difficulty: 'hard',
+      challenge: `
       <script>
         const dbRequest = indexedDB.open('credentials', 1);
         
@@ -270,16 +273,16 @@ export const LEVELS: Level[] = [
         };
       </script>
     `,
-  },
-  {
-    id: 15,
-    title: 'Level 15: WebWorker Messages',
-    description: 'Credentials transmitted via Web Worker. Intercept the message!',
-    username: 'worker_user',
-    password: 'web_worker_secret',
-    hint: 'Check Console for worker messages. The credentials are passed to a Worker and logged back.',
-    difficulty: 'hard',
-    challenge: `
+    },
+    {
+      id: 15,
+      title: t('levels.15.title'),
+      description: t('levels.15.description'),
+      username: 'worker_user',
+      password: 'web_worker_secret',
+      hint: t('levels.15.hint'),
+      difficulty: 'hard',
+      challenge: `
       <script>
         const workerCode = \`
           self.postMessage({
@@ -298,16 +301,16 @@ export const LEVELS: Level[] = [
         };
       </script>
     `,
-  },
-  {
-    id: 16,
-    title: 'Level 16: Hexadecimal Encoding',
-    description: 'Credentials encoded in hexadecimal. Decode them!',
-    username: 'hex_master',
-    password: 'hex_encoded_pass',
-    hint: 'Convert hex strings to ASCII. Try: String.fromCharCode(...)',
-    difficulty: 'insane',
-    challenge: `
+    },
+    {
+      id: 16,
+      title: t('levels.16.title'),
+      description: t('levels.16.description'),
+      username: 'hex_master',
+      password: 'hex_encoded_pass',
+      hint: t('levels.16.hint'),
+      difficulty: 'insane',
+      challenge: `
       <script>
         const hexUser = '68657830305f6d6173746572'.split('').reverse().join('');
         const hexPass = '7061787pha865735f656e636f646564'.split('').reverse().join('');
@@ -318,16 +321,16 @@ export const LEVELS: Level[] = [
         console.log('Hint: Check window.HEX_CREDS');
       </script>
     `,
-  },
-  {
-    id: 17,
-    title: 'Level 17: Binary Data',
-    description: 'Credentials stored as binary data in an ArrayBuffer.',
-    username: 'binary_seeker',
-    password: 'binary_secrets',
-    hint: 'Use the Console to read the ArrayBuffer. Try: new Uint8Array(window.BINARY_DATA)',
-    difficulty: 'insane',
-    challenge: `
+    },
+    {
+      id: 17,
+      title: t('levels.17.title'),
+      description: t('levels.17.description'),
+      username: 'binary_seeker',
+      password: 'binary_secrets',
+      hint: t('levels.17.hint'),
+      difficulty: 'insane',
+      challenge: `
       <script>
         const userBytes = new Uint8Array([98, 105, 110, 97, 114, 121, 95, 115, 101, 101, 107, 101, 114]);
         const passBytes = new Uint8Array([98, 105, 110, 97, 114, 121, 95, 115, 101, 99, 114, 101, 116, 115]);
@@ -345,16 +348,16 @@ export const LEVELS: Level[] = [
         console.log('Binary credentials stored. Check window.BINARY_DATA');
       </script>
     `,
-  },
-  {
-    id: 18,
-    title: 'Level 18: Shadow DOM Secrets',
-    description: 'Credentials hidden in Shadow DOM. Inspect the DOM tree!',
-    username: 'shadow_walker',
-    password: 'shadow_dom_master',
-    hint: 'Inspector shows Shadow DOM. Look for #shadow-root in the DOM tree.',
-    difficulty: 'insane',
-    challenge: `
+    },
+    {
+      id: 18,
+      title: t('levels.18.title'),
+      description: t('levels.18.description'),
+      username: 'shadow_walker',
+      password: 'shadow_dom_master',
+      hint: t('levels.18.hint'),
+      difficulty: 'insane',
+      challenge: `
       <div id="shadow-host"></div>
       <script>
         const host = document.getElementById('shadow-host');
@@ -370,16 +373,16 @@ export const LEVELS: Level[] = [
         \`;
       </script>
     `,
-  },
-  {
-    id: 19,
-    title: 'Level 19: Mixed Cipher',
-    description: 'Credentials encoded with multiple layers: Hex + Base64 + ROT13',
-    username: 'cipher_expert',
-    password: 'triple_encrypted',
-    hint: 'Decode step by step: Hex → Base64 → ROT13. Use online tools or JS functions.',
-    difficulty: 'insane',
-    challenge: `
+    },
+    {
+      id: 19,
+      title: t('levels.19.title'),
+      description: t('levels.19.description'),
+      username: 'cipher_expert',
+      password: 'triple_encrypted',
+      hint: t('levels.19.hint'),
+      difficulty: 'insane',
+      challenge: `
       <script>
         function rot13(str) {
           return str.replace(/[a-zA-Z]/g, (c) => 
@@ -400,16 +403,16 @@ export const LEVELS: Level[] = [
         console.log('Encoded username stored. Decode it!');
       </script>
     `,
-  },
-  {
-    id: 20,
-    title: 'Level 20: ULTIMATE CHALLENGE',
-    description: 'All techniques combined. Full obfuscation and multiple encoding layers.',
-    username: 'ultimate_hacker',
-    password: 'master_of_security',
-    hint: 'Use ALL your skills: Inspector, Console, Network, decode multiple formats, check all storage types.',
-    difficulty: 'insane',
-    challenge: `
+    },
+    {
+      id: 20,
+      title: t('levels.20.title'),
+      description: t('levels.20.description'),
+      username: 'ultimate_hacker',
+      password: 'master_of_security',
+      hint: t('levels.20.hint'),
+      difficulty: 'insane',
+      challenge: `
       <script>
         // Multiple storage methods combined
         localStorage.setItem('hint1', btoa('Check sessionStorage'));
@@ -443,5 +446,7 @@ export const LEVELS: Level[] = [
       </script>
       <p style="font-size: 0.5px; opacity: 0.01;">Ultimate: ultimate_hacker / master_of_security</p>
     `,
-  },
-];
+    },
+  ];
+  return LEVELS;
+}
