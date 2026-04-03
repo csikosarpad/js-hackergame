@@ -17,7 +17,7 @@
     "declarationMap": false, // Generate source maps for declaration files
     "sourceMap": false, // Generate source maps for debugging
     "jsx": "react-jsx",
-    "resolveJsonModule": true,
+    "resolveJsonModule": true, // Allow importing JSON files
     "types": ["react", "react-dom"],
     "baseUrl": "./src",
     "paths": {

@@ -108,7 +108,7 @@ export function getLEVELS() {
       <script>
         const encoded = btoa('admin2:stylesheet_secret');
         document.styleSheets[0].addRule('.secret-data::after', 'content: "Hint: admin2:stylesheet_secret"; display: none;');
-        console.log('CSS hidden data:', encoded);
+        //console.log('CSS hidden data:', encoded);
       </script>
       <div class="secret-data"></div>
     `,

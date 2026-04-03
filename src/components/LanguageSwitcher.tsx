@@ -3,10 +3,8 @@ import { useTranslation } from 'react-i18next';
 export default function LanguageSwitcher() {
     const { i18n, t } = useTranslation();
 
-
     const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
-        localStorage.setItem('i18nextLng', lng);
     };
 
     return (
