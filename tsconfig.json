@@ -13,9 +13,9 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
+    "declaration": false, // Generate declaration files (.d.ts)
+    "declarationMap": false, // Generate source maps for declaration files
+    "sourceMap": false, // Generate source maps for debugging
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "types": ["react", "react-dom"],
