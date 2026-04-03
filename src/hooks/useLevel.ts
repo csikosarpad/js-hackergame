@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Level } from '../types/level';
-import { LEVELS } from '../data/levels';
+import { Level } from '@/types/level';
+import { LEVELS } from '@/data/levels';
 
 export const useLevel = (levelId: number) => {
     const [level, setLevel] = useState<Level | null>(null);

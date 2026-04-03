@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Level } from '../types/level';
-import { executeScriptsInElement } from '../utils/scriptExecutor';
+import { Level } from '@/types/level';
+import { executeScriptsInElement } from '@/utils/scriptExecutor';
 
 interface ChallengeProps {
     level: Level | null;

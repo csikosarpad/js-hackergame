@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { LEVELS } from '../data/levels';
+import { LEVELS } from '@/data/levels';
 
 interface LevelSelectorProps {
     onSelectLevel: (levelId: number) => void;

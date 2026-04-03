@@ -19,7 +19,16 @@
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "types": ["react", "react-dom"],
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@/components/*": ["components/*"],
+      "@/data/*": ["data/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/utils/*": ["utils/*"],
+      "@/locales/*": ["locales/*"],
+      "@/types/*": ["types/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "build"]
